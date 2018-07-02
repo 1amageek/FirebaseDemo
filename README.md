@@ -1,4 +1,4 @@
-# FirebaseDemo
+# Firebase Demo
 Firebase meetup #4 
 
 ## Build
