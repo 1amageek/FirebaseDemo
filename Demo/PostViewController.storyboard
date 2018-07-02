@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gGX-sc-jl2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post View Controller-->
+        <scene sceneID="4Ug-i1-xS0">
+            <objects>
+                <viewController id="U7E-oS-aNR" customClass="PostViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZTG-7s-thr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grt-4O-E1Y">
+                                <rect key="frame" x="32" y="455" width="311" height="30"/>
+                                <state key="normal" title="写真を選択"/>
+                                <connections>
+                                    <action selector="showImagePickerController:" destination="U7E-oS-aNR" eventType="touchUpInside" id="VK1-UZ-8iD"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-49-xGU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5iI-49-xGU" secondAttribute="height" multiplier="1:1" id="mAU-iz-bXm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5iI-49-xGU" firstAttribute="top" secondItem="Ahh-3m-Qoo" secondAttribute="top" id="5cR-Bv-49a"/>
+                            <constraint firstItem="5iI-49-xGU" firstAttribute="trailing" secondItem="Ahh-3m-Qoo" secondAttribute="trailing" id="6q8-OG-f53"/>
+                            <constraint firstItem="grt-4O-E1Y" firstAttribute="top" secondItem="5iI-49-xGU" secondAttribute="bottom" constant="16" id="KxA-zu-cse"/>
+                            <constraint firstItem="Ahh-3m-Qoo" firstAttribute="trailing" secondItem="grt-4O-E1Y" secondAttribute="trailing" constant="32" id="nDa-D7-plE"/>
+                            <constraint firstItem="grt-4O-E1Y" firstAttribute="leading" secondItem="Ahh-3m-Qoo" secondAttribute="leading" constant="32" id="ycE-DD-K0g"/>
+                            <constraint firstItem="5iI-49-xGU" firstAttribute="leading" secondItem="Ahh-3m-Qoo" secondAttribute="leading" id="zha-eL-0bF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ahh-3m-Qoo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m4l-fi-Hxk">
+                        <barButtonItem key="rightBarButtonItem" title="送信" id="bdW-2k-pRL">
+                            <connections>
+                                <action selector="post:" destination="U7E-oS-aNR" id="yIT-8b-bu4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="5iI-49-xGU" id="WOE-3F-Mk3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P47-Cq-Fam" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="223.53823088455775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H3w-YE-Abn">
+            <objects>
+                <navigationController id="gGX-sc-jl2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8F7-T4-F1A">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="U7E-oS-aNR" kind="relationship" relationship="rootViewController" id="tIX-Nc-34S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoV-75-QFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-695" y="224"/>
+        </scene>
+    </scenes>
+</document>
